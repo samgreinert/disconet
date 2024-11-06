@@ -18,8 +18,8 @@
 		<h1>{{ settings.title }}</h1>
 		<div class="subtitle">{{ settings.subtitle }}</div>
 	</header>
-	{% if config.url_banner %}<img class="board_image" src="{{ config.url_banner }}" {% if config.banner_width or config.banner_height %}style="{% if config.banner_width %}width:{{ config.banner_width }}px{% endif %};{% if config.banner_width %}height:{{ config.banner_height }}px{% endif %}" {% endif %}alt="" />{% endif %}
-	
+	{% if config.url_banner %} <a href="disco.net"><img class="board_image" src="{{ config.url_banner }}" {% if config.banner_width or config.banner_height %}style="{% if config.banner_width %}width:{{ config.banner_width }}px{% endif %};{% if config.banner_width %}height:{{ config.banner_height }}px{% endif %}" {% endif %}alt="" /></a> {% endif %}
+
 	<div class="box-wrap">
 	    <fieldset>
 		<legend>Boards</legend>
@@ -39,10 +39,6 @@
 	        <div class="description">{{ settings.description }}</div>
 	        <br>
 	        <img class="imageofnow" src="{{ settings.imageofnow }}">
-	        <br>
-	        <div class="quoteofnow">{{ settings.quoteofnow }}</div>
-	        <br>
-	        <iframe class ="videoofnow" width="560" height="315" src="{{ settings.videoofnow }}"></iframe>
 	        <br>
 	    </div>
 	    <div class="ban">
@@ -79,7 +75,7 @@
 			<ul>
 				{% for post in recent_posts %}
 					<li>
-						<strong>{{ post.board_name }}</strong>: 
+						<strong>{{ post.board_name }}</strong>:
 						<a href="{{ post.link }}">
 							{{ post.snippet }}
 						</a>
@@ -96,11 +92,11 @@
 			</ul>
 		</div>
 	</div>
-	
+
 	<hr/>
 
 	{% include 'footer.html' %}
-	
+
 </body>
 </html>
 {% endapply %}

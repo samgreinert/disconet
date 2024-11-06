@@ -27,7 +27,7 @@
 	{{ boardlist.top }}
 	<a name="top"></a>
 	{% if pm %}<div class="top_notice">You have <a href="?/PM/{{ pm.id }}">an unread PM</a>{% if pm.waiting > 0 %}, plus {{ pm.waiting }} more waiting{% endif %}.</div><hr />{% endif %}
-	{% if config.url_banner %}<img class="board_image" src="{{ config.url_banner }}" {% if config.banner_width or config.banner_height %}style="{% if config.banner_width %}width:{{ config.banner_width }}px{% endif %};{% if config.banner_width %}height:{{ config.banner_height }}px{% endif %}" {% endif %}alt="" />{% endif %}
+	{% if config.url_banner %}<a href="disco.net"><img class="board_image" src="{{ config.url_banner }}" {% if config.banner_width or config.banner_height %}style="{% if config.banner_width %}width:{{ config.banner_width }}px{% endif %};{% if config.banner_width %}height:{{ config.banner_height }}px{% endif %}" {% endif %}alt="" /></a>{% endif %}
 	<header>
 		<h1>{{ board.url }} - {{ board.title|e }}</h1>
 		<div class="subtitle">
@@ -55,9 +55,9 @@
 	<form name="postcontrols" action="{{ config.post_url }}" method="post">
 		<input type="hidden" name="board" value="{{ board.uri }}" />
 		{% if mod %}<input type="hidden" name="mod" value="1" />{% endif %}
-		
+
 		{{ body }}
-		
+
 		<div id="thread-interactions">
 			<span id="thread-links">
 				<a id="thread-return" href="{{ return }}">[{% trans %}Return{% endtrans %}]</a>
@@ -66,24 +66,24 @@
 					<a id="thread-catalog" href="{{ config.root }}{% if mod %}{{ config.file_mod }}?/{% endif %}{{ board.dir }}{{ config.catalog_link }}">{% trans %}Catalog{% endtrans %}</a>
 		                {% endif %}
 			</span>
-			
+
 			<span id="thread-quick-reply">
 				<a id="link-quick-reply" href="#">[{% trans %}Post a Reply{% endtrans %}]</a>
 			</span>
-			
+
 			{% include 'report_delete.html' %}
 		</div>
-		
+
 		<div class="clearfix"></div>
 	</form>
-	
+
 	<a name="bottom"></a>
 	{{ boardlist.bottom }}
 
 	{{ config.ad.bottom }}
 
 	{% include 'footer.html' %}
-	
+
 	<script type="text/javascript">{% verbatim %}
 		ready();
 	{% endverbatim %}</script>
