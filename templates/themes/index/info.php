@@ -14,7 +14,7 @@
 		'title' => 'Icon',
 		'name' => 'icon',
 		'type' => 'text',
-		'default' => '../templates/themes/index/disco-net.png',
+		'default' => '',
 		'size' => 50
 	);
 
@@ -45,7 +45,7 @@
 		'title' => 'Image of the now.',
 		'name' => 'imageofnow',
 		'type' => 'text',
-		'default' => '../templates/themes/index/disco-net.png',
+		'default' => '../templates/themes/index/killdozer.png',
 		'size' => 50
 	);
 
@@ -53,7 +53,7 @@
 		'title' => 'Quote of the now.',
 		'name' => 'quoteofnow',
 		'type' => 'textarea',
-		'default' => ''
+		'default' => '"No one\'s in charge, we\'re all just pissed!" - Robert Evans'
 	);
 
 		$theme['config'][] = Array(
